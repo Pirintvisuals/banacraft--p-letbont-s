@@ -1,0 +1,15 @@
+# Banacraft Épületbontás — robots.txt
+# A végleges domaint állítsd be a Sitemap sornál, ha nem banacraft.hu.
+
+User-agent: *
+Allow: /
+
+# AI keresők (opcionális, engedélyezve)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://banacraft.hu/sitemap.xml

@@ -5,6 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Banacraft · Épületbontás Budapest | Belső bontás és törmelék-elszállítás</title>
 <meta name="description" content="Belső terek pontos bontása azonnali kezdéssel: burkolat, falazat, aljzat, mennyezet, fa szerkezet. A törmeléket is elszállítjuk kijelölt hulladékfeldolgozóba. Ingyenes helyszíni felmérés Budapesten. Hívjon: +36 70 625 2014" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Banacraft" />
+<meta name="theme-color" content="#C1501B" />
+
+<!-- FIGYELEM: a végleges domaint állítsd be mindenhol (jelenleg: https://banacraft.hu) -->
+<link rel="canonical" href="https://banacraft.hu/" />
+
+<!-- Open Graph (Facebook / Messenger / WhatsApp linkelőnézet) -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:site_name" content="Banacraft" />
+<meta property="og:title" content="Banacraft · Épületbontás Budapest | Belső bontás és törmelék-elszállítás" />
+<meta property="og:description" content="Belső terek pontos bontása azonnali kezdéssel, a törmelék elszállításával együtt. Ingyenes helyszíni felmérés Budapesten és környékén." />
+<meta property="og:url" content="https://banacraft.hu/" />
+<!-- CSERÉLENDŐ: ideális egy 1200×630-as social kártya; ideiglenesen a logó. -->
+<meta property="og:image" content="https://banacraft.hu/logo-theme.png" />
+<meta property="og:image:alt" content="Banacraft épületbontás" />
+
+<!-- Twitter/X kártya -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Banacraft · Épületbontás Budapest" />
+<meta name="twitter:description" content="Belső terek pontos bontása azonnali kezdéssel, a törmelék elszállításával együtt. Ingyenes helyszíni felmérés." />
+<meta name="twitter:image" content="https://banacraft.hu/logo-theme.png" />
+
+<!-- Favicon -->
+<link rel="icon" href="/logo.webp" type="image/webp" />
+<link rel="apple-touch-icon" href="/logo-theme.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -509,6 +536,63 @@ section{position:relative}
   html{scroll-behavior:auto}
 }
 </style>
+
+<!-- ===================== STRUKTURÁLT ADATOK (JSON-LD) ===================== -->
+<!-- Helyi vállalkozás. A [ELLENŐRZENDŐ] mezőket a kliens adataival pontosítsd. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://banacraft.hu/#business",
+  "name": "Banacraft Épületbontás",
+  "description": "Belső terek pontos bontása azonnali kezdéssel: burkolat, falazat, aljzat, mennyezet és fa szerkezet bontása, a törmelék elszállításával együtt. Ingyenes helyszíni felmérés Budapesten és környékén.",
+  "url": "https://banacraft.hu/",
+  "logo": "https://banacraft.hu/logo-theme.png",
+  "image": "https://banacraft.hu/logo-theme.png",
+  "telephone": "+36706252014",
+  "email": "info@banacraft.hu",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kőbányai út 43/A",
+    "addressLocality": "Budapest",
+    "postalCode": "1101",
+    "addressCountry": "HU"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Budapest" },
+    { "@type": "Place", "name": "Budapest és környéke" },
+    { "@type": "Country", "name": "Magyarország" }
+  ],
+  "knowsAbout": ["épületbontás", "belső bontás", "burkolatbontás", "falbontás", "aljzatbontás", "tetőbontás", "törmelék elszállítás", "azbesztmentesítés", "azbesztes tető bontása"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Bontási szolgáltatások",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Burkolatok bontása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Belső falazatok bontása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aljzatok bontása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mennyezetek bontása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fa szerkezetek bontása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Törmelék elszállítása" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Azbeszt szakszerű kezelése" } }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Mennyi idő alatt tudnak kezdeni?", "acceptedAnswer": { "@type": "Answer", "text": "Akár azonnal. Hívjon, és egyeztetünk egy időpontot. A felmérés után pontosan megmondjuk, mikor tudunk kezdeni." } },
+    { "@type": "Question", "name": "Mi történik a törmelékkel?", "acceptedAnswer": { "@type": "Answer", "text": "A kijelölt hulladékfeldolgozó üzembe szállítjuk, Önnek nem kell ezzel foglalkoznia. A bontás és az elszállítás egy kézből történik." } },
+    { "@type": "Question", "name": "Mi van, ha az anyag azbesztet tartalmaz?", "acceptedAnswer": { "@type": "Answer", "text": "A felmérésnél ellenőrizzük, tartalmaz-e azbesztet a bontandó anyag. Ha igen, elkülönítve, szabályosan kezeljük és szállítjuk el, dokumentációval. Erről előre tájékoztatjuk, mielőtt bármi elkezdődne. Azbesztet tartalmazó tetők bontását is a jogszabályban előírt módon végezzük." } },
+    { "@type": "Question", "name": "Kell a bontáshoz engedély?", "acceptedAnswer": { "@type": "Answer", "text": "Nem minden bontásnál ugyanazok a szabályok érvényesek: a helyszín, az épület típusa és elhelyezkedése számít. A felmérésnél ellenőrizzük, milyen engedélyezési vagy dokumentációs követelmény vonatkozik a munkára, és ebben segítünk eligazodni." } },
+    { "@type": "Question", "name": "Milyen állapotban adják át a helyiséget?", "acceptedAnswer": { "@type": "Answer", "text": "Tiszta, megtisztított állapotban. Nem törmelékkel teli helyiséget hagyunk hátra, hanem a következő munkafázishoz készen adjuk át a területet." } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -944,7 +1028,7 @@ section{position:relative}
         </ul>
       </article>
     </div>
-    <p class="aud-note reveal">Van egy konkrét referenciája ipari vagy kereskedelmi ügyfélről? <strong>Küldje meg, és beemeljük ide.</strong></p>
+    <p class="aud-note reveal">Korábbi megbízóink között önkormányzatok és intézmények is szerepelnek: <strong>MÁV, Monor város, Pécel város önkormányzata, Tata önkormányzata, Nemzeti Színház.</strong> A vállalásainkat mindig pontosan és precízen teljesítjük.</p>
   </div>
 </section>
 
@@ -956,6 +1040,10 @@ section{position:relative}
         <span class="eyebrow">Miért minket válasszon</span>
         <h2 style="font-size:clamp(2rem,3.4vw,2.8rem);margin-top:18px">Pontos munka, azonnali kezdés, tiszta terep.</h2>
         <ul class="why-list">
+          <li>
+            <span class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><h4>Engedéllyel, országos tapasztalattal</h4><p>Vállalunk magánszemélyeknek és nagyobb, intézményi/önkormányzati munkákat is, az ország egész területén.</p></div>
+          </li>
           <li>
             <span class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div><h4>Azonnali kezdés</h4><p>Nem kell hetekig várni, hívjon, és időpontot egyeztetünk.</p></div>
@@ -1145,7 +1233,7 @@ section{position:relative}
       </div>
       <div class="faq-item">
         <button class="faq-q">Mi van, ha az anyag azbesztet tartalmaz?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">A felmérésnél ellenőrizzük, tartalmaz-e azbesztet a bontandó anyag. Ha igen, elkülönítve, szabályosan kezeljük és szállítjuk el, dokumentációval. Erről előre tájékoztatjuk, mielőtt bármi elkezdődne.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">A felmérésnél ellenőrizzük, tartalmaz-e azbesztet a bontandó anyag. Ha igen, elkülönítve, szabályosan kezeljük és szállítjuk el, dokumentációval. Erről előre tájékoztatjuk, mielőtt bármi elkezdődne. Azbesztet tartalmazó tetők bontását is a jogszabályban előírt módon végezzük.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Ki intézi a közművek leválasztását?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></button>
@@ -1213,12 +1301,10 @@ section{position:relative}
 </div>
 
 <!-- ===================== ÁRBECSLŐ ASSZISZTENS - LEBEGŐ INDÍTÓ ===================== -->
-<!-- A valódi chatbot később kerül be; ez csak az indító gomb + placeholder. -->
 <button type="button" class="agent-fab js-quote-agent" data-quote-agent aria-label="Árbecslő asszisztens indítása">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.3-3.9-.9L3 20l1-4a8.5 8.5 0 1 1 17-4.5Z" stroke-linejoin="round"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-linecap="round"/></svg>
   <span>Azonnali árbecslés</span>
 </button>
-<div class="agent-toast" id="agentToast" role="status" aria-live="polite"></div>
 
 <script>
 /* Header scroll state */
@@ -1269,22 +1355,21 @@ document.querySelectorAll('.js-quote-form').forEach(form=>{
   });
 });
 
-/* ===== Árbecslő asszisztens - PLACEHOLDER =====
-   A valódi chatbotot ide kösd be: cseréld le az openQuoteAgent() törzsét
-   az asszisztens megnyitására. Minden [data-quote-agent] gomb ide fut be. */
-function openQuoteAgent(){
-  const toast=document.getElementById('agentToast');
-  toast.textContent='Az árbecslő asszisztens hamarosan elérhető lesz itt.';
-  toast.classList.add('show');
-  clearTimeout(window.__agentToastT);
-  window.__agentToastT=setTimeout(()=>toast.classList.remove('show'),3200);
-}
-document.querySelectorAll('[data-quote-agent]').forEach(btn=>{
-  btn.addEventListener('click',openQuoteAgent);
-});
-
 /* Year */
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
+
+<!-- ===================== ÁRBECSLŐ ASSZISZTENS (widget) =====================
+     A saját .agent-fab gombunk már a lebegő indító, ezért launcher:false -
+     a widget.js ne rakjon rá egy második buborékot. Minden [data-quote-agent] /
+     .js-quote-agent / [data-banacraft-chat] elem ezt nyitja meg. -->
+<script>
+  window.BANACRAFT_CONFIG = {
+    apiUrl: "https://banacraft-epuletbontas-quoting-agen.vercel.app/api/faq-agent",
+    assetsUrl: "https://banacraft-epuletbontas-quoting-agen.vercel.app",
+    launcher: false
+  };
+</script>
+<script src="https://banacraft-epuletbontas-quoting-agen.vercel.app/widget.js"></script>
 </body>
 </html>
