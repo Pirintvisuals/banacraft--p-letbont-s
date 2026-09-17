@@ -1484,10 +1484,11 @@ document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 <script src="https://banacraft-epuletbontas-quoting-agen.vercel.app/widget.js"></script>
 <script>
-/* Telefonon a chat azonnal megnyílik - látogatásonként egyszer,
-   hogy újratöltésnél / bezárás után ne ugorjon fel újra. */
+/* Asztali gépen a chat azonnal megnyílik (telefonon nem, ott csak az indító
+   gomb látszik) - látogatásonként egyszer, hogy újratöltésnél / bezárás után
+   ne ugorjon fel újra. */
 (function(){
-  if(!window.matchMedia('(max-width:760px)').matches) return;
+  if(window.matchMedia('(max-width:760px)').matches) return;
   try{ if(sessionStorage.getItem('bc_autopen')) return; sessionStorage.setItem('bc_autopen','1'); }catch(e){}
   var tries=0;
   (function tryOpen(){
