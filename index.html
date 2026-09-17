@@ -249,16 +249,6 @@ section{position:relative}
 .agent-bubble.user{align-self:flex-end;background:var(--rust);color:#fff;border-bottom-right-radius:4px}
 .agent-bubble.est{background:rgba(62,207,142,.14);border:1px solid rgba(62,207,142,.35)}
 
-/* Lebegő chat-indító */
-.agent-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:10px;padding:13px 20px 13px 16px;border:none;border-radius:999px;background:var(--rust);color:#fff;font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;box-shadow:0 12px 30px rgba(165,65,15,.4);transition:transform .2s,background .2s}
-.agent-fab:hover{background:var(--rust-dark);transform:translateY(-2px)}
-.agent-fab svg{width:22px;height:22px}
-@media(max-width:560px){.agent-fab span{display:none}.agent-fab{padding:14px;border-radius:50%}}
-
-/* Placeholder toast */
-.agent-toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(12px);z-index:80;background:var(--ink);color:#fff;padding:13px 20px;border-radius:10px;font-size:.92rem;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:88vw;text-align:center}
-.agent-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 /* ---------- Trust strip ---------- */
 .trust{background:var(--graphite-900);color:#fff;border-top:1px solid rgba(255,255,255,.05)}
 .trust-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding:22px 0}
@@ -540,8 +530,9 @@ section{position:relative}
 @media(max-width:760px){
   .sticky-cta{display:flex}
   body{padding-bottom:74px}
-  .agent-fab{bottom:84px}
-  .agent-toast{bottom:150px}
+  /* A widget indítója ne takarja a sticky hívás-sávot */
+  #faq-agent-container .faq-chat-launcher{bottom:calc(86px + env(safe-area-inset-bottom))}
+  #faq-agent-container .faq-chat-tooltip{bottom:calc(156px + env(safe-area-inset-bottom))}
 }
 @media(max-width:600px){
   .wrap{padding:0 20px}
@@ -1427,11 +1418,6 @@ section{position:relative}
   <a href="#urlap" class="btn btn-cta">Ingyenes felmérés</a>
 </div>
 
-<!-- ===================== ÁRBECSLŐ ASSZISZTENS - LEBEGŐ INDÍTÓ ===================== -->
-<button type="button" class="agent-fab js-quote-agent" data-quote-agent aria-label="Árbecslő asszisztens indítása">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.3-3.9-.9L3 20l1-4a8.5 8.5 0 1 1 17-4.5Z" stroke-linejoin="round"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-linecap="round"/></svg>
-  <span>Azonnali árbecslés</span>
-</button>
 
 <script>
 /* Header scroll state */
@@ -1487,16 +1473,28 @@ document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 
 <!-- ===================== ÁRBECSLŐ ASSZISZTENS (widget) =====================
-     A saját .agent-fab gombunk már a lebegő indító, ezért launcher:false -
-     a widget.js ne rakjon rá egy második buborékot. Minden [data-quote-agent] /
-     .js-quote-agent / [data-banacraft-chat] elem ezt nyitja meg. -->
+     A widget saját lebegő indítóját (kerek gomb + váltakozó teaser buborék)
+     használjuk. Emellett minden [data-quote-agent] / .js-quote-agent /
+     [data-banacraft-chat] elem is ezt nyitja meg. -->
 <script>
   window.BANACRAFT_CONFIG = {
     apiUrl: "https://banacraft-epuletbontas-quoting-agen.vercel.app/api/faq-agent",
-    assetsUrl: "https://banacraft-epuletbontas-quoting-agen.vercel.app",
-    launcher: false
+    assetsUrl: "https://banacraft-epuletbontas-quoting-agen.vercel.app"
   };
 </script>
 <script src="https://banacraft-epuletbontas-quoting-agen.vercel.app/widget.js"></script>
+<script>
+/* Telefonon a chat azonnal megnyílik - látogatásonként egyszer,
+   hogy újratöltésnél / bezárás után ne ugorjon fel újra. */
+(function(){
+  if(!window.matchMedia('(max-width:760px)').matches) return;
+  try{ if(sessionStorage.getItem('bc_autopen')) return; sessionStorage.setItem('bc_autopen','1'); }catch(e){}
+  var tries=0;
+  (function tryOpen(){
+    if(window.BANACRAFT && typeof window.BANACRAFT.open==='function'){ window.BANACRAFT.open(); return; }
+    if(++tries<50) setTimeout(tryOpen,100);
+  })();
+})();
+</script>
 </body>
 </html>
