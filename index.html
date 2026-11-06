@@ -329,6 +329,10 @@ section{position:relative}
 .photo-slot strong{font-family:"Archivo",sans-serif;font-size:1rem;font-weight:700}
 .photo-slot small{font-size:.82rem;opacity:.8}
 .photo-slot .tag{position:absolute;top:12px;left:12px;background:var(--graphite-800);color:#fff;font-size:.68rem;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:.02em}
+.photo-card{position:relative;aspect-ratio:4/3;margin:0;border-radius:var(--r-md);overflow:hidden;background:var(--concrete-200)}
+.photo-card img{display:block;width:100%;height:100%;object-fit:cover}
+.photo-card .tag{position:absolute;top:12px;left:12px;background:var(--graphite-800);color:#fff;font-size:.68rem;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:.02em}
+.photo-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-size:.86rem;color:#fff;background:linear-gradient(transparent,rgba(20,18,15,.82))}
 .gallery-note{margin-top:28px;text-align:center;font-size:.94rem;color:var(--ink-muted)}
 .gallery-note strong{color:var(--graphite-800)}
 
@@ -985,7 +989,7 @@ section{position:relative}
         <div class="agent-bubble user">Fürdőszoba csempe, kb. 12 m².</div>
         <div class="agent-bubble bot">Rendben. Budapesten belül van a helyszín, és kérik a törmelék elszállítását is?</div>
         <div class="agent-bubble user">Igen, XI. kerület, elszállítással.</div>
-        <div class="agent-bubble bot est">Előzetes árbecslés: <strong>kb. 45 000 és 65 000 Ft között</strong>. Kéri, hogy egy ingyenes felmérésen pontosítsuk?</div>
+        <div class="agent-bubble bot est">Előzetes árbecslés: alapár <strong>90 000 Ft-tól</strong>, elszállítással, ÁFA-val. Kéri, hogy egy ingyenes felmérésen pontosítsuk?</div>
       </div>
     </div>
   </div>
@@ -1033,47 +1037,25 @@ section{position:relative}
   <div class="wrap">
     <div class="section-head reveal center" style="text-align:center;max-width:640px;margin:0 auto">
       <span class="eyebrow center">Munkáink</span>
-      <h2>Néhány elvégzett bontásunk.</h2>
-      <p class="lead" style="margin-left:auto;margin-right:auto">Ide kerülnek a valós fotók: előtte, utána, munka közben.</p>
+      <h2>Munkáinkból.</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Valós fotók: így néz ki egy terület, mielőtt nekilátunk.</p>
     </div>
     <div class="gallery-grid reveal">
-      <!-- FOTÓK HELYE: valós referenciafotók (4:3). A feliratok cserélhetők. -->
-      <div class="photo-slot">
+      <figure class="photo-card">
+        <img src="img/omlo-fal-tormelek.webp" alt="Omladozó vakolatú fal, előtte bontási törmelék és gaz" width="1200" height="900" loading="lazy" decoding="async">
         <span class="tag">Előtte</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>Régi burkolat, bontás előtt</small>
-      </div>
-      <div class="photo-slot">
-        <span class="tag">Munka közben</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>Bontás folyamatban</small>
-      </div>
-      <div class="photo-slot">
-        <span class="tag">Utána</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>Tiszta, kész terület</small>
-      </div>
-      <div class="photo-slot">
-        <span class="tag">Falbontás</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>Válaszfal bontása</small>
-      </div>
-      <div class="photo-slot">
-        <span class="tag">Aljzat</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>Aljzat felbontása</small>
-      </div>
-      <div class="photo-slot">
-        <span class="tag">Csapatunk</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 5l1.5-2h5L16 5" stroke-linejoin="round"/></svg>
-        <strong>Ide kerül egy fotó</strong>
-        <small>A csapat munka közben</small>
-      </div>
+        <figcaption>Omladozó fal, törmelék a fal mentén</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="img/tormelekes-terulet.webp" alt="Bontási hulladékkal, burkolatdarabokkal teli benőtt terület" width="1200" height="900" loading="lazy" decoding="async">
+        <span class="tag">Előtte</span>
+        <figcaption>Bontási hulladék, burkolatdarabok</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="img/sitt-es-zsakok.webp" alt="Zsákokba gyűjtött hulladék, téglák és sitt, elszállításra várva" width="450" height="798" loading="lazy" decoding="async">
+        <span class="tag">Elszállítás</span>
+        <figcaption>Sitt és zsákolt hulladék, elszállításra készen</figcaption>
+      </figure>
     </div>
     <p class="gallery-note reveal">Vannak fotói egy elvégzett munkáról? <strong>Küldje meg, és beemeljük ide.</strong></p>
   </div>
